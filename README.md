@@ -37,6 +37,18 @@ Quando a taxa de pedidos cai, a primeira resposta boa não é “rodar um modelo
 5. aponta os maiores drivers da queda;
 6. devolve uma recomendação inicial de investigação.
 
+## Arquitetura analítica
+
+O projeto trata a queda de pedidos como um problema de **diagnóstico de produto**, não de modelagem preditiva.
+
+O fluxo analítico é:
+
+1. comparar `baseline` e `current`;
+2. medir o delta de pedidos;
+3. decompor por etapa do funil;
+4. decompor por segmento;
+5. priorizar a primeira hipótese operacional ou de produto.
+
 ## Técnicas utilizadas
 
 - funnel analysis
@@ -44,6 +56,23 @@ Quando a taxa de pedidos cai, a primeira resposta boa não é “rodar um modelo
 - segment decomposition
 - ranking de drivers de queda
 - hipótese orientada por produto
+
+## Contrato dos dados
+
+Cada linha representa uma sessão com campos como:
+
+- `period`
+- `region`
+- `device`
+- `user_segment`
+- `promo_shown`
+- `app_open`
+- `store_view`
+- `cart_add`
+- `checkout_start`
+- `order_placed`
+
+O projeto usa esses flags para reconstruir o funil e comparar a progressão entre janelas.
 
 ## Ferramentas e bibliotecas
 
@@ -67,6 +96,26 @@ O projeto foi desenhado para detectar uma queda de pedidos concentrada em:
 - `order_rate_drop_pct = -7.65`
 - maior driver de queda:
   - `south region`
+
+Leitura técnica:
+
+- o topo do funil está relativamente estável;
+- a perda aparece com mais força do meio para o fim do funil;
+- o `south` concentra a principal deterioração;
+- o comportamento por `user_segment` já não está artificialmente enviesado.
+
+## Contrato do relatório
+
+O artefato [order_rate_drop_report.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/data/processed/order_rate_drop_report.json) contém:
+
+- funil do baseline
+- funil do current
+- taxas por etapa
+- decomposição por região
+- decomposição por device
+- decomposição por segmento
+- ranking dos principais drivers
+- recomendação inicial de investigação
 
 ## Como executar
 
