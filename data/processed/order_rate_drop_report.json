@@ -1,0 +1,138 @@
+{
+  "dataset_source": "synthetic_order_rate_drop_diagnostic",
+  "session_count": 2000,
+  "baseline_session_count": 1000,
+  "current_session_count": 1000,
+  "baseline_funnel": {
+    "app_open": 1000,
+    "store_view": 900,
+    "cart_add": 743,
+    "checkout_start": 572,
+    "order_placed": 379
+  },
+  "current_funnel": {
+    "app_open": 1000,
+    "store_view": 900,
+    "cart_add": 697,
+    "checkout_start": 519,
+    "order_placed": 350
+  },
+  "baseline_funnel_rates": {
+    "app_open": 1.0,
+    "store_view": 0.9,
+    "cart_add": 0.8256,
+    "checkout_start": 0.7699,
+    "order_placed": 0.6626
+  },
+  "current_funnel_rates": {
+    "app_open": 1.0,
+    "store_view": 0.9,
+    "cart_add": 0.7744,
+    "checkout_start": 0.7446,
+    "order_placed": 0.6744
+  },
+  "baseline_orders": 379,
+  "current_orders": 350,
+  "order_rate_drop_pct": -7.65,
+  "region_diagnostic": {
+    "east": {
+      "baseline_orders": 113,
+      "current_orders": 109,
+      "absolute_change": -4,
+      "relative_change_pct": -3.54
+    },
+    "north": {
+      "baseline_orders": 122,
+      "current_orders": 116,
+      "absolute_change": -6,
+      "relative_change_pct": -4.92
+    },
+    "south": {
+      "baseline_orders": 80,
+      "current_orders": 69,
+      "absolute_change": -11,
+      "relative_change_pct": -13.75
+    },
+    "west": {
+      "baseline_orders": 64,
+      "current_orders": 56,
+      "absolute_change": -8,
+      "relative_change_pct": -12.5
+    }
+  },
+  "device_diagnostic": {
+    "android": {
+      "baseline_orders": 125,
+      "current_orders": 116,
+      "absolute_change": -9,
+      "relative_change_pct": -7.2
+    },
+    "ios": {
+      "baseline_orders": 125,
+      "current_orders": 115,
+      "absolute_change": -10,
+      "relative_change_pct": -8.0
+    },
+    "web": {
+      "baseline_orders": 129,
+      "current_orders": 119,
+      "absolute_change": -10,
+      "relative_change_pct": -7.75
+    }
+  },
+  "user_segment_diagnostic": {
+    "casual": {
+      "baseline_orders": 122,
+      "current_orders": 113,
+      "absolute_change": -9,
+      "relative_change_pct": -7.38
+    },
+    "new_user": {
+      "baseline_orders": 122,
+      "current_orders": 111,
+      "absolute_change": -11,
+      "relative_change_pct": -9.02
+    },
+    "power_user": {
+      "baseline_orders": 135,
+      "current_orders": 126,
+      "absolute_change": -9,
+      "relative_change_pct": -6.67
+    }
+  },
+  "top_drop_drivers": [
+    {
+      "dimension": "region",
+      "value": "south",
+      "baseline_orders": 80,
+      "current_orders": 69,
+      "absolute_change": -11,
+      "relative_change_pct": -13.75
+    },
+    {
+      "dimension": "region",
+      "value": "west",
+      "baseline_orders": 64,
+      "current_orders": 56,
+      "absolute_change": -8,
+      "relative_change_pct": -12.5
+    },
+    {
+      "dimension": "region",
+      "value": "north",
+      "baseline_orders": 122,
+      "current_orders": 116,
+      "absolute_change": -6,
+      "relative_change_pct": -4.92
+    }
+  ],
+  "recommendation": {
+    "decision": "investigate_checkout_and_south_region",
+    "reasoning": [
+      "The order drop is concentrated in the south region and is amplified at the checkout stage.",
+      "The current period shows weaker checkout-start and order-placement progression than the baseline.",
+      "A product or operational issue affecting the south region and late-funnel completion is the most plausible first hypothesis."
+    ]
+  },
+  "report_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/data/processed/order_rate_drop_report.json"
+}
