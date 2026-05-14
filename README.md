@@ -4,7 +4,7 @@
 
 ### Visão geral
 
-`order-rate-drop-diagnostic` é um projeto de diagnóstico de produto para marketplace, inspirado em uma pergunta recorrente de entrevista: **o que você faria se a taxa de pedidos caisse de forma relevante**.
+`order-rate-drop-diagnostic` é um projeto de diagnóstico de produto para marketplace focado em investigar quedas relevantes na taxa de pedidos.
 
 O projeto compara:
 
@@ -70,7 +70,7 @@ Cada linha representa uma sessão com campos como:
 
 ### Contrato do relatório
 
-O artefato [order_rate_drop_report.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/data/processed/order_rate_drop_report.json) contém:
+O artefato [order_rate_drop_report.json](data/processed/order_rate_drop_report.json) contém:
 
 - funil do baseline
 - funil do current
@@ -98,10 +98,10 @@ Leitura técnica:
 
 ### Arquivos principais
 
-- [main.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/main.py)
-- [src/data_factory.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/src/data_factory.py)
-- [src/modeling.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/src/modeling.py)
-- [tests/test_project.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/tests/test_project.py)
+- [main.py](main.py)
+- [src/data_factory.py](src/data_factory.py)
+- [src/modeling.py](src/modeling.py)
+- [tests/test_project.py](tests/test_project.py)
 
 ### Como executar
 
@@ -111,15 +111,12 @@ python3 -m unittest discover -s tests -v
 python3 -m py_compile main.py src/data_factory.py src/modeling.py tests/test_project.py
 ```
 
-### Como defender em entrevista
-
-> Se a taxa de pedidos caisse, eu começaria decompondo a queda por período, etapa do funil e segmentos críticos. O objetivo é identificar onde a progressão piorou e qual grupo concentra a maior contribuição para o delta negativo.
 
 ## English
 
 ### Overview
 
-`order-rate-drop-diagnostic` is a marketplace product diagnostic project built around a common interview question: **what would you do if order rate dropped materially**.
+`order-rate-drop-diagnostic` is a marketplace product diagnostic project focused on investigating material drops in order rate.
 
 The project compares:
 
@@ -185,7 +182,7 @@ Each row represents one session with fields such as:
 
 ### Report contract
 
-The artifact [order_rate_drop_report.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/data/processed/order_rate_drop_report.json) contains:
+The artifact [order_rate_drop_report.json](data/processed/order_rate_drop_report.json) contains:
 
 - baseline funnel
 - current funnel
@@ -206,10 +203,10 @@ The artifact [order_rate_drop_report.json](/Users/flaviagaia/Documents/CV_FLAVIA
 
 ### Main files
 
-- [main.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/main.py)
-- [src/data_factory.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/src/data_factory.py)
-- [src/modeling.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/src/modeling.py)
-- [tests/test_project.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/tests/test_project.py)
+- [main.py](main.py)
+- [src/data_factory.py](src/data_factory.py)
+- [src/modeling.py](src/modeling.py)
+- [tests/test_project.py](tests/test_project.py)
 
 ### How to run
 
@@ -218,7 +215,3 @@ python3 main.py
 python3 -m unittest discover -s tests -v
 python3 -m py_compile main.py src/data_factory.py src/modeling.py tests/test_project.py
 ```
-
-### Interview framing
-
-> If order rate dropped, I would start by decomposing the change by period, funnel stage, and critical segments. The goal is to identify where progression deteriorated and which group contributes most to the negative delta.

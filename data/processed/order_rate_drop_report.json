@@ -134,5 +134,5 @@
       "A product or operational issue affecting the south region and late-funnel completion is the most plausible first hypothesis."
     ]
   },
-  "report_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/order-rate-drop-diagnostic/data/processed/order_rate_drop_report.json"
+  "report_artifact": "data/processed/order_rate_drop_report.json"
 }
